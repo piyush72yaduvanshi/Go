@@ -1,5 +1,8 @@
 package main
 
+import "fmt"
+import "maps"
+
 // maps -> hash, object, dict
 func main() {
 	// creating map
@@ -26,18 +29,18 @@ func main() {
 	// fmt.Println(m)
 	// fmt.Println(m)
 
-	// m := map[string]int{"price": 40, "phones": 3}
+	m := map[string]int{"price": 40, "phones": 3}
 
-	// v, ok := m["phones"]
-	// fmt.Println(v)
-	// if ok {
-	// 	fmt.Println("all ok")
-	// } else {
-	// 	fmt.Println("not ok")
-	// }
+	v, ok := m["phones"]
+	fmt.Println(v)
+	if ok {
+		fmt.Println("all ok")
+	} else {
+		fmt.Println("not ok")
+	}
 
-	// m1 := map[string]int{"price": 40, "phones": 3}
-	// m2 := map[string]int{"price": 40, "phones": 8}
-	// fmt.Println(maps.Equal(m1, m2))
+	m1 := map[string]int{"price": 40, "phones": 3}
+	m2 := map[string]int{"price": 40, "phones": 3}
+	fmt.Println(maps.Equal(m1, m2))
 
 }
