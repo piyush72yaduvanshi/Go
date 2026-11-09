@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 )
 
 // slice -> dynamic
@@ -9,9 +10,9 @@ import (
 // + useful methods
 func main() {
 	// uninitialized slice is nil
-	var nums []int
-	fmt.Println(nums == nil)
-	fmt.Println(len(nums))
+	// var nums []int
+	// fmt.Println(nums == nil)
+	// fmt.Println(len(nums))
 
 	// var nums = make([]int, 0, 5)
 	// capacity -> maximum numbers of elements can fit
@@ -23,6 +24,14 @@ func main() {
 	// nums = append(nums, 1)
 	// nums = append(nums, 2)
 
+	// fmt.Println(nums)
+	// fmt.Println(cap(nums))
+	// fmt.Println(len(nums))
+	// fmt.Println(nums == nil)
+	// fmt.Println(nums[0])
+
+	// agar hme slice me index ke through value set karni ho to hme slice ka size define karna padega
+	// var nums = make([]int, 2, 5)
 	// nums[0] = 3
 	// nums[1] = 5
 	// fmt.Println(nums)
@@ -39,16 +48,16 @@ func main() {
 
 	// slice operator
 
-	// var nums = []int{1, 2, 3, 4, 5}
-	// fmt.Println(nums[0:1])
-	// fmt.Println(nums[:2])
-	// fmt.Println(nums[1:])
+	var nums = []int{1, 2, 3, 4, 5}
+	fmt.Println(nums[0:1])
+	fmt.Println(nums[:2])
+	fmt.Println(nums[1:])
 
 	// slices
-	// var nums1 = []int{1, 2, 3}
-	// var nums2 = []int{1, 2, 4}
+	var nums1 = []int{1, 2, 3}
+	var nums2 = []int{1, 2, 4}
 
-	// fmt.Println(slices.Equal(nums1, nums2))
+	fmt.Println(slices.Equal(nums1, nums2))
 
 	// var nums = [][]int{{1, 2, 3}, {4, 5, 6}}
 	// fmt.Println(nums)
