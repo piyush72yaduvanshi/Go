@@ -59,15 +59,16 @@ func main() {
 	newOrder.customer.name = "robin"
 	fmt.Println(newOrder)
 
-	// language := struct {
-	// 	name   string
-	// 	isGood bool
-	// }{"golang", true}
+	language := struct {
+		name   string
+		isGood bool
+	}{"golang", true}
 
-	// fmt.Println(language)
+	fmt.Println(language)
 
 	// myOrder := newOrder("1", 30.50, "received")
 	// fmt.Println(myOrder.amount)
+
 	// if you don't set any field, default value is zero value
 	// int => 0, float => 0, string "", bool => false
 	// myOrder := order{
