@@ -8,28 +8,33 @@ func printSlice[T comparable, V string](items []T, name V) {
 	}
 }
 
-// func printStringSlice(items []string) {
-// 	for _, item := range items {
-// 		fmt.Println(item)
-// 	}
-// }
+func printAnySlice[T any](items []T) {
+	for _, item := range items {
+		fmt.Println(item)
+	}
+}
 
-//
+func printStringSlice(items []string) {
+	for _, item := range items {
+		fmt.Println(item)
+	}
+}
+
 // LIFO
-// type stack[T any] struct {
-// 	elements []T
-// }
+type stack[T any] struct {
+	elements []T
+}
 
 func main() {
-	// myStack := stack[string]{
-	// 	elements: []string{"golang"},
-	// }
+	myStack := stack[string]{
+		elements: []string{"golang"},
+	}
 
-	// fmt.Println(myStack)
+	fmt.Println(myStack)
 
 	// nums := []int{1, 2, 3}
-	// names := []string{"golang", "typescript"}
+	names := []string{"golang", "typescript"}
 	vals := []bool{true, false, true}
-	// printStringSlice(names)
+	printStringSlice(names)
 	printSlice(vals, "john")
 }

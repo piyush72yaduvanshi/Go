@@ -26,11 +26,11 @@ func (r razorpay) pay(amount float32) {
 	fmt.Println("making payment using razorpay", amount)
 }
 
-// type stripe struct{}
+type stripe struct{}
 
-// func (s stripe) pay(amount float32) {
-// 	fmt.Println("making payment using stripe", amount)
-// }
+func (s stripe) pay(amount float32) {
+	fmt.Println("making payment using stripe", amount)
+}
 
 type fakepayment struct{}
 
