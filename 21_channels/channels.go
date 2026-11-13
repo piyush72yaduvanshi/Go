@@ -20,7 +20,7 @@ import (
 // 	result <- numResult
 // }
 
-// goroutine synchronizer
+// // goroutine synchronizer
 // func task(done chan bool) {
 // 	defer func() { done <- true }()
 
@@ -57,20 +57,21 @@ func main() {
 		}
 	}
 
-	// emailChan := make(chan string, 100)
-	// done := make(chan bool)
+	// buffered channel
+	emailChan := make(chan string, 100)
+	done := make(chan bool)
 
-	// go emailSender(emailChan, done)
+	go emailSender(emailChan, done)
 
-	// for i := 0; i < 5; i++ {
-	// 	emailChan <- fmt.Sprintf("%d@gmail.com", i)
-	// }
+	for i := 0; i < 50; i++ {
+		emailChan <- fmt.Sprintf("%d@gmail.com", i)
+	}
 
-	// fmt.Println("done sending.")
+	fmt.Println("done sending.")
 
-	// this is important
-	// close(emailChan)
-	// <-done
+	// this is important for closing channel
+	close(emailChan)
+	<-done
 	// emailChan <- "1@example.com"
 	// emailChan <- "2@example.com"
 
