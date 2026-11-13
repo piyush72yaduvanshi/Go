@@ -1,4 +1,4 @@
-module github.com/codersgyan/podcast
+module github.com/podcast
 
 go 1.22.5
 
